@@ -189,7 +189,7 @@
       $.post(currentURL + "/api/friends", newfriend,
         function(data) {
           
-            alert("Your friend!");
+            alert(data.name);
   
           // Clear the form when submitting
           $("#name").val("");
