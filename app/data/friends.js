@@ -21,7 +21,7 @@ var friendArray = [
 },
 {
   "name":"Percy",
-  "photo":"luke.jpg",
+  "photo":"percy.jpg",
   "scores":[
      2,
      5,

@@ -12,7 +12,7 @@ module.exports = function(app) {
   // when a user submits form data (a JSON object)
   // ...the JSON is pushed to the Javascript array
   app.post("/api/friends", function(req, res) {
-     
+      //console.log(req.body.name)
       //make variables
       var scoreArray = []
       var score = 0
@@ -22,7 +22,7 @@ module.exports = function(app) {
       score = 0        
       //calculate delta points and push to new array
         for (var j=0; j<friendData[i].scores.length; j++) {
-          score += Math.abs(res.scores[j]-friendData[i].scores[j]);
+          score += Math.abs(req.body.scores[j]-friendData[i].scores[j]);
         }//for j
       scoreArray.push(score);
       }//for i        
@@ -30,9 +30,9 @@ module.exports = function(app) {
       var matchLoc =scoreArray.indexOf(Math.min.apply(Math, scoreArray))
       //select friend at that position
       var match = friendData[matchLoc]
-      alert(match.name)
+      console.log(match)
       //add new person to array
-      friendData.push(res.body);
+      friendData.push(req.body);
       //send info back to html for use in modal
       res.json(match);
     
