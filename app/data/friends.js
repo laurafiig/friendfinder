@@ -21,7 +21,7 @@ var friendArray = [
 },
 {
   "name":"Percy",
-  "photo":"#",
+  "photo":"luke.jpg",
   "scores":[
      2,
      5,
@@ -68,9 +68,9 @@ var friendArray = [
    ]
 },
 {
-  "name":"Patty",
-  "photo":"Patty.jpg",
-  "scores":[
+  name:"Patty",
+  photo:"Patty.jpg",
+  scores:[
      3,
      3,
      3,
@@ -86,7 +86,7 @@ var friendArray = [
 ];
 
 // export the array
-module.exports = tableArray;
+module.exports = friendArray;
 
 
 

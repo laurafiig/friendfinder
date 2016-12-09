@@ -3,8 +3,9 @@
 <head>
 	<title>Friend Finder</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
 </head>
 <body>
 	<br>
@@ -17,11 +18,11 @@
 					<h2>About You</h2>
 					<div class="form-group">
 						<label for="name">Your name:</label>
-						<input type="text" class="form-control" id="email">
+						<input type="text" class="form-control" id="name">
 					</div>
 					<div class="form-group">
 						<label for="photo">Your Photo:</label>
-						<input type="text" class="form-control" id="pwd">
+						<input type="text" class="form-control" id="photo">
 					</div>
 					<hr>
 					<div class="form-group">
@@ -135,7 +136,7 @@
 					  </select>
 					</div>					
 					<hr>
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="submit" class="btn btn-primary submit">Submit</button>
 				</form>
 			</div>
 		</div>
@@ -144,10 +145,70 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<a href="#">API Friends List</a> | 
+				<a href="/api/friends">API Friends List</a> | 
 				<a href="https://github.com/laurafiig/friendfinder">GitHub Repo</a>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+
+<!-- CODE HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+    // when the user hits submit, jQuery grabs the data then sends a post request to our api
+    // Our api recognizes the route and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the friends.js
+
+    $(".submit").on("click", function() {
+    	//alert("clicked")
+      // Here we grab the form elements
+		var newfriend = {
+			name:$("#name").val().trim(),
+			photo:$("#photo").val().trim(),
+			scores:[
+				parseInt($("#sel1").val()),
+				parseInt($("#sel2").val()),
+				parseInt($("#sel3").val()),
+				parseInt($("#sel4").val()),
+				parseInt($("#sel5").val()),
+				parseInt($("#sel6").val()),
+				parseInt($("#sel7").val()),
+				parseInt($("#sel8").val()),
+				parseInt($("#sel9").val()),
+				parseInt($("#sel10").val())
+			]
+		}
+		
+     	console.log(newfriend);
+
+      // we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server.
+
+      var currentURL = window.location.origin;
+
+      $.post(currentURL + "/api/friends", newfriend,
+        function(data) {
+          
+            alert("Your friend!");
+  
+          // Clear the form when submitting
+          $("#name").val("");
+          $("#photo").val("");
+          $("#sel1").val("");
+          $("#sel2").val("");
+          $("#sel2").val("");
+          $("#sel4").val("");
+          $("#sel5").val("");
+          $("#sel6").val("");
+          $("#sel7").val("");
+          $("#sel8").val("");
+          $("#sel9").val("");
+          $("#sel10").val("");
+
+        });
+
+      return false;
+
+    });
+
+</script>
