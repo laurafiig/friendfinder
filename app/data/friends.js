@@ -4,9 +4,9 @@
 
 var friendArray = [
   {
-  "name":"Luke",
-  "photo":"luke.jpg",
-  "scores":[
+  name:"Luke",
+  photo:"http://pad1.whstatic.com/images/c/c7/Go-hiking.jpg",
+  scores:[
      5,
      1,
      4,
@@ -20,9 +20,9 @@ var friendArray = [
    ]
 },
 {
-  "name":"Percy",
-  "photo":"percy.jpg",
-  "scores":[
+  name:"Percy",
+  photo:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTSm7RBFP7cXRAul5PhtCx0SClQbaPQWhIfX7N3JRDsd7a1nnMH",
+  scores:[
      2,
      5,
      2,
@@ -36,9 +36,9 @@ var friendArray = [
    ]
 },
 {
-  "name":"Pixie",
-  "photo":"pixie.png",
-  "scores":[
+  name:"Pixie",
+  photo:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSk8LuPcnuWH2FoQ_uALSULr0tD2bpBfEa8aLVToz88_Df1rzzXKg",
+  scores:[
      4,
      3,
      4,
@@ -52,9 +52,9 @@ var friendArray = [
    ]
 },
 {
-  "name":"Jennifer",
-  "photo":"jennifer.jpg",
-  "scores":[
+  name:"Jennifer",
+  photo:"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQmCcyS3-iThcLr6ZUFpOIjojU9oncSKJw12AfdCTmjQ3V6TGcj",
+  scores:[
      4,
      1,
      2,
@@ -69,7 +69,7 @@ var friendArray = [
 },
 {
   name:"Patty",
-  photo:"Patty.jpg",
+  photo:"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzZaMZRi4JsxOKqX8zL7tRc2VlW4u8dgnxH4OoPXCXXU3jgLod",
   scores:[
      3,
      3,
